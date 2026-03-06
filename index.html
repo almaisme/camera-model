@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>永康值班室｜超級工程版監視器覆蓋模型</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <h1>永康值班室｜超級工程版監視器覆蓋模型</h1>
+        <div class="sub">依使用者提供 GLB + 現場照片建立的近似工程示意版（兩支攝影機、100°視角、可旋轉）</div>
+      </div>
+      <div class="toolbar">
+        <button id="toggleCones">關閉覆蓋錐體</button>
+        <button id="topViewBtn">俯視圖</button>
+        <button id="resetBtn">重設視角</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="viewerWrap">
+        <canvas id="c"></canvas>
+        <div class="legend">
+          <div><span class="dot camA"></span>Camera A（左）</div>
+          <div><span class="dot camB"></span>Camera B（右）</div>
+          <div><span class="dot cone"></span>100° 覆蓋區</div>
+          <div><span class="dot desk"></span>值班桌區（近似）</div>
+        </div>
+      </section>
+
+      <aside class="side">
+        <div class="card">
+          <h2>工程判讀摘要</h2>
+          <ul>
+            <li>兩支攝影機均安裝於同一面牆高處，採 100° 廣角近似。</li>
+            <li>右側 Camera B 明顯覆蓋值班桌主要區域。</li>
+            <li>左側 Camera A 覆蓋隔板區，並延伸到值班桌左半側。</li>
+            <li>值班桌前緣與座位區位於兩支攝影機重疊覆蓋帶附近。</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>目前模型參數</h2>
+          <table>
+            <tr><th>視角</th><td>100°</td></tr>
+            <tr><th>相機高度</th><td>1.85 m（近似）</td></tr>
+            <tr><th>俯角</th><td>約 18°（近似）</td></tr>
+            <tr><th>作用距離</th><td>6.5 m（近似）</td></tr>
+            <tr><th>桌區</th><td>依現場照片推定</td></tr>
+          </table>
+        </div>
+
+        <div class="card warn">
+          <h2>注意</h2>
+          <p>這是<strong>工程示意版</strong>，不是法院鑑定版。因為目前沒有取得攝影機實際型號、安裝高度、俯仰角、焦段與精準座標，所以覆蓋區屬於<strong>高可信近似</strong>，適合做說明、討論、內部呈報。</p>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
